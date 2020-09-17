@@ -3,19 +3,38 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D5547CF2513451400ED2F17 /* Page1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5547CE2513451400ED2F17 /* Page1ViewController.swift */; };
+		8D5547D12513472C00ED2F17 /* YoutubeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5547D02513472C00ED2F17 /* YoutubeData.swift */; };
+		8D5547D3251369A300ED2F17 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5547D2251369A300ED2F17 /* WebViewController.swift */; };
+		8D5547D525136E0200ED2F17 /* Page2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5547D425136E0200ED2F17 /* Page2ViewController.swift */; };
+		8D5547D725136E1E00ED2F17 /* Page3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5547D625136E1E00ED2F17 /* Page3ViewController.swift */; };
+		8D5547D925136E3100ED2F17 /* Page4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5547D825136E3100ED2F17 /* Page4ViewController.swift */; };
+		8D5547DB25136E4200ED2F17 /* Page5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5547DA25136E4200ED2F17 /* Page5ViewController.swift */; };
+		8D5547DD25136E5C00ED2F17 /* Page6ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5547DC25136E5C00ED2F17 /* Page6ViewController.swift */; };
+		8D5547DF25138BFA00ED2F17 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8D5547DE25138BFA00ED2F17 /* GoogleService-Info.plist */; };
 		8DC21E0C2513076500BE2392 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC21E0B2513076500BE2392 /* AppDelegate.swift */; };
 		8DC21E0E2513076500BE2392 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC21E0D2513076500BE2392 /* SceneDelegate.swift */; };
 		8DC21E102513076500BE2392 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC21E0F2513076500BE2392 /* ViewController.swift */; };
 		8DC21E132513076500BE2392 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DC21E112513076500BE2392 /* Main.storyboard */; };
 		8DC21E152513076700BE2392 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DC21E142513076700BE2392 /* Assets.xcassets */; };
 		8DC21E182513076700BE2392 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DC21E162513076700BE2392 /* LaunchScreen.storyboard */; };
+		F90BC8CFDB4338550002E9F9 /* Pods_Swift5YoutuberApp022.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B84BEE8740843EFAA3F43A07 /* Pods_Swift5YoutuberApp022.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8D5547CE2513451400ED2F17 /* Page1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page1ViewController.swift; sourceTree = "<group>"; };
+		8D5547D02513472C00ED2F17 /* YoutubeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeData.swift; sourceTree = "<group>"; };
+		8D5547D2251369A300ED2F17 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		8D5547D425136E0200ED2F17 /* Page2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page2ViewController.swift; sourceTree = "<group>"; };
+		8D5547D625136E1E00ED2F17 /* Page3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page3ViewController.swift; sourceTree = "<group>"; };
+		8D5547D825136E3100ED2F17 /* Page4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page4ViewController.swift; sourceTree = "<group>"; };
+		8D5547DA25136E4200ED2F17 /* Page5ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page5ViewController.swift; sourceTree = "<group>"; };
+		8D5547DC25136E5C00ED2F17 /* Page6ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page6ViewController.swift; sourceTree = "<group>"; };
+		8D5547DE25138BFA00ED2F17 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8DC21E082513076500BE2392 /* Swift5YoutuberApp022.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swift5YoutuberApp022.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DC21E0B2513076500BE2392 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8DC21E0D2513076500BE2392 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +43,9 @@
 		8DC21E142513076700BE2392 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8DC21E172513076700BE2392 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8DC21E192513076700BE2392 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B84BEE8740843EFAA3F43A07 /* Pods_Swift5YoutuberApp022.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swift5YoutuberApp022.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C02726D708D58BFF0D2F0331 /* Pods-Swift5YoutuberApp022.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift5YoutuberApp022.debug.xcconfig"; path = "Target Support Files/Pods-Swift5YoutuberApp022/Pods-Swift5YoutuberApp022.debug.xcconfig"; sourceTree = "<group>"; };
+		EAD67A5AD24CE75F4A201E7D /* Pods-Swift5YoutuberApp022.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift5YoutuberApp022.release.xcconfig"; path = "Target Support Files/Pods-Swift5YoutuberApp022/Pods-Swift5YoutuberApp022.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +53,72 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F90BC8CFDB4338550002E9F9 /* Pods_Swift5YoutuberApp022.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F879072C28742791961A3DE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C02726D708D58BFF0D2F0331 /* Pods-Swift5YoutuberApp022.debug.xcconfig */,
+				EAD67A5AD24CE75F4A201E7D /* Pods-Swift5YoutuberApp022.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		500128D8CC184BB2F2858FD1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B84BEE8740843EFAA3F43A07 /* Pods_Swift5YoutuberApp022.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8D5547C925132ED500ED2F17 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8DC21E0B2513076500BE2392 /* AppDelegate.swift */,
+				8DC21E0D2513076500BE2392 /* SceneDelegate.swift */,
+				8DC21E0F2513076500BE2392 /* ViewController.swift */,
+				8D5547CE2513451400ED2F17 /* Page1ViewController.swift */,
+				8D5547D2251369A300ED2F17 /* WebViewController.swift */,
+				8D5547D425136E0200ED2F17 /* Page2ViewController.swift */,
+				8D5547D625136E1E00ED2F17 /* Page3ViewController.swift */,
+				8D5547D825136E3100ED2F17 /* Page4ViewController.swift */,
+				8D5547DA25136E4200ED2F17 /* Page5ViewController.swift */,
+				8D5547DC25136E5C00ED2F17 /* Page6ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8D5547CA25132EF000ED2F17 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8DC21E112513076500BE2392 /* Main.storyboard */,
+				8DC21E142513076700BE2392 /* Assets.xcassets */,
+				8DC21E162513076700BE2392 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8D5547CB25132F1800ED2F17 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8D5547D02513472C00ED2F17 /* YoutubeData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		8DC21DFF2513076500BE2392 = {
 			isa = PBXGroup;
 			children = (
 				8DC21E0A2513076500BE2392 /* Swift5YoutuberApp022 */,
 				8DC21E092513076500BE2392 /* Products */,
+				3F879072C28742791961A3DE /* Pods */,
+				500128D8CC184BB2F2858FD1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,13 +133,11 @@
 		8DC21E0A2513076500BE2392 /* Swift5YoutuberApp022 */ = {
 			isa = PBXGroup;
 			children = (
-				8DC21E0B2513076500BE2392 /* AppDelegate.swift */,
-				8DC21E0D2513076500BE2392 /* SceneDelegate.swift */,
-				8DC21E0F2513076500BE2392 /* ViewController.swift */,
-				8DC21E112513076500BE2392 /* Main.storyboard */,
-				8DC21E142513076700BE2392 /* Assets.xcassets */,
-				8DC21E162513076700BE2392 /* LaunchScreen.storyboard */,
+				8D5547CB25132F1800ED2F17 /* Model */,
+				8D5547CA25132EF000ED2F17 /* View */,
+				8D5547C925132ED500ED2F17 /* Controller */,
 				8DC21E192513076700BE2392 /* Info.plist */,
+				8D5547DE25138BFA00ED2F17 /* GoogleService-Info.plist */,
 			);
 			path = Swift5YoutuberApp022;
 			sourceTree = "<group>";
@@ -74,9 +149,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8DC21E1C2513076700BE2392 /* Build configuration list for PBXNativeTarget "Swift5YoutuberApp022" */;
 			buildPhases = (
+				DEFA236E8D337AA2DAB3470D /* [CP] Check Pods Manifest.lock */,
 				8DC21E042513076500BE2392 /* Sources */,
 				8DC21E052513076500BE2392 /* Frameworks */,
 				8DC21E062513076500BE2392 /* Resources */,
+				D7FE0A85910014FB38298E64 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,6 +203,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DC21E182513076700BE2392 /* LaunchScreen.storyboard in Resources */,
+				8D5547DF25138BFA00ED2F17 /* GoogleService-Info.plist in Resources */,
 				8DC21E152513076700BE2392 /* Assets.xcassets in Resources */,
 				8DC21E132513076500BE2392 /* Main.storyboard in Resources */,
 			);
@@ -133,14 +211,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		D7FE0A85910014FB38298E64 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Swift5YoutuberApp022/Pods-Swift5YoutuberApp022-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Swift5YoutuberApp022/Pods-Swift5YoutuberApp022-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Swift5YoutuberApp022/Pods-Swift5YoutuberApp022-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DEFA236E8D337AA2DAB3470D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Swift5YoutuberApp022-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8DC21E042513076500BE2392 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				8DC21E102513076500BE2392 /* ViewController.swift in Sources */,
+				8D5547D3251369A300ED2F17 /* WebViewController.swift in Sources */,
+				8D5547DD25136E5C00ED2F17 /* Page6ViewController.swift in Sources */,
+				8D5547D925136E3100ED2F17 /* Page4ViewController.swift in Sources */,
+				8D5547D12513472C00ED2F17 /* YoutubeData.swift in Sources */,
+				8D5547D725136E1E00ED2F17 /* Page3ViewController.swift in Sources */,
+				8D5547DB25136E4200ED2F17 /* Page5ViewController.swift in Sources */,
+				8D5547CF2513451400ED2F17 /* Page1ViewController.swift in Sources */,
 				8DC21E0C2513076500BE2392 /* AppDelegate.swift in Sources */,
 				8DC21E0E2513076500BE2392 /* SceneDelegate.swift in Sources */,
+				8D5547D525136E0200ED2F17 /* Page2ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +410,7 @@
 		};
 		8DC21E1D2513076700BE2392 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C02726D708D58BFF0D2F0331 /* Pods-Swift5YoutuberApp022.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -294,12 +423,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.nifty.cbm01799.Swift5YoutuberApp022;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		8DC21E1E2513076700BE2392 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EAD67A5AD24CE75F4A201E7D /* Pods-Swift5YoutuberApp022.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -312,7 +442,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.nifty.cbm01799.Swift5YoutuberApp022;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

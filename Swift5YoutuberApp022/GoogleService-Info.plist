@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>155324669219-mii8op0eesln2ot4tjsppns35t79gblh.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.155324669219-mii8op0eesln2ot4tjsppns35t79gblh</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCdnkZW2EwgCd1-682mEz0ttOHl6deML70</string>
+	<key>GCM_SENDER_ID</key>
+	<string>155324669219</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.nifty.cbm01799.Swift5YoutuberApp022</string>
+	<key>PROJECT_ID</key>
+	<string>seismic-pursuit-289105</string>
+	<key>STORAGE_BUCKET</key>
+	<string>seismic-pursuit-289105.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:155324669219:ios:0c47686345fe6823e90096</string>
+	<key>DATABASE_URL</key>
+	<string>https://seismic-pursuit-289105.firebaseio.com</string>
+</dict>
+</plist>
