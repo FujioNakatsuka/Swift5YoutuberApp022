@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //許可を促すアラートを出す
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert,.sound]) { (granted, error) in
             self.notificationGranted = granted
-            if let error = error{
+            if error != nil{
                 
                 print("エラーです。")
                 

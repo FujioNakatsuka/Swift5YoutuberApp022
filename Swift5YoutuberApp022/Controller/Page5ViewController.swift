@@ -99,21 +99,22 @@ class Page5ViewController: UITableViewController,SegementSlideContentScrollViewD
                 
             case .success:
                 
-            for i in 0...9{
+            for i in 0...19{
                 
                 let json:JSON = JSON(responce.data as Any)
-                let videoId = json["items"][i]["id"]["videoId"].string
-//                let publishedAt = json["items"][i]["snippet"]["publishedAt"].string
+                //videoIdに関連する106、110、113、117行目をコメントアウトするとクラッシュはしない。
+//                let videoId = json["items"][i]["id"]["videoId"].string
+
                 let title = json["items"][i]["snippet"]["title"].string
                 let imageURLString = json["items"][i]["snippet"]["thumbnails"]["default"]["url"].string
-                let youtubeURL = "https://www.youtube.com/watch?v=\(videoId!)"
+//                let youtubeURL = "https://www.youtube.com/watch?v=\(videoId!)"
                 let channelTitle = json["items"][i]["snippet"]["channelTitle"].string
                 
-                self.videoIdArray.append(videoId!)
+//                self.videoIdArray.append(videoId!)
                 self.titleArray.append(title!)
                 self.imageURLStringArray.append(imageURLString!)
                 self.channelTitleArray.append(channelTitle!)
-                self.youtubeURLArray.append(youtubeURL)
+//                self.youtubeURLArray.append(youtubeURL)
                 
                 }
             //✨このbreakはなぜ必要か❓
