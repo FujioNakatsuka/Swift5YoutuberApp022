@@ -102,19 +102,25 @@ class Page5ViewController: UITableViewController,SegementSlideContentScrollViewD
             for i in 0...19{
                 
                 let json:JSON = JSON(responce.data as Any)
-                //videoIdに関連する106、110、113、117行目をコメントアウトするとクラッシュはしない。
-//                let videoId = json["items"][i]["id"]["videoId"].string
+                //videoIdに関連する行をコメントアウトするとクラッシュはしない。そこでif文にbreakを入れてみるとクラッシュはしなかったが、動画は出ない。。。
+                let videoId = json["items"][i]["id"]["videoId"].string
+                
+                if videoId?.isEmpty ?? true{
 
+//                    videoId = json["7l4xJbSA5Jg"].string
+                    break
+                }
+          
                 let title = json["items"][i]["snippet"]["title"].string
                 let imageURLString = json["items"][i]["snippet"]["thumbnails"]["default"]["url"].string
-//                let youtubeURL = "https://www.youtube.com/watch?v=\(videoId!)"
+                let youtubeURL = "https://www.youtube.com/watch?v=\(videoId!)"
                 let channelTitle = json["items"][i]["snippet"]["channelTitle"].string
                 
-//                self.videoIdArray.append(videoId!)
+                self.videoIdArray.append(videoId!)
                 self.titleArray.append(title!)
                 self.imageURLStringArray.append(imageURLString!)
                 self.channelTitleArray.append(channelTitle!)
-//                self.youtubeURLArray.append(youtubeURL)
+                self.youtubeURLArray.append(youtubeURL)
                 
                 }
             //✨このbreakはなぜ必要か❓

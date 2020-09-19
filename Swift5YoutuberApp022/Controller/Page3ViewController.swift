@@ -19,7 +19,6 @@ class Page3ViewController: UITableViewController,SegementSlideContentScrollViewD
     var youtubeData = YoutubeData()
     
     var videoIdArray = [String]()
-//    var publishedAtArray = [String]()
     var titleArray = [String]()
     var imageURLStringArray = [String]()
     var youtubeURLArray = [String]()
@@ -47,7 +46,6 @@ class Page3ViewController: UITableViewController,SegementSlideContentScrollViewD
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "Cell")
         cell.selectionStyle = .none
         let profileImageURL = URL(string: self.imageURLStringArray[indexPath.row] as String)!
-//        cell.imageView?.sd_setImage(with: profileImageURL, completed: nil)
         
         cell.imageView?.sd_setImage(with: profileImageURL, completed: { (image, error, _, _) in
             
@@ -62,7 +60,6 @@ class Page3ViewController: UITableViewController,SegementSlideContentScrollViewD
         })
         
         cell.textLabel!.text = self.titleArray[indexPath.row]
-        //cell.detailTextLabel!.text = self.publishedArray[indexPath.row]
         cell.textLabel?.adjustsFontSizeToFitWidth = true
         cell.detailTextLabel?.adjustsFontSizeToFitWidth = true
         cell.textLabel?.numberOfLines = 5
@@ -103,19 +100,26 @@ class Page3ViewController: UITableViewController,SegementSlideContentScrollViewD
             for i in 0...19{
                 
                 let json:JSON = JSON(responce.data as Any)
-                //videoIdに関連する107、111、114、118行目をコメントアウトするとクラッシュはしない。
-//                let videoId = json["items"][i]["id"]["videoId"].string
+                //videoIdに関連する行をコメントアウトするとクラッシュはしない。そこでif文にbreakを入れてみるとクラッシュはしなかったが、動画は出ない。。。
+                let videoId = json["items"][i]["id"]["videoId"].string
+                
+                if videoId?.isEmpty ?? true{
+
+//                    videoId = json["7l4xJbSA5Jg"].string
+                    break
+                }
+                
 
                 let title = json["items"][i]["snippet"]["title"].string
                 let imageURLString = json["items"][i]["snippet"]["thumbnails"]["default"]["url"].string
-//                let youtubeURL = "https://www.youtube.com/watch?v=\(videoId!)"
+                let youtubeURL = "https://www.youtube.com/watch?v=\(videoId!)"
                 let channelTitle = json["items"][i]["snippet"]["channelTitle"].string
                 
-//                self.videoIdArray.append(videoId!)
+                self.videoIdArray.append(videoId!)
                 self.titleArray.append(title!)
                 self.imageURLStringArray.append(imageURLString!)
                 self.channelTitleArray.append(channelTitle!)
-//                self.youtubeURLArray.append(youtubeURL)
+                self.youtubeURLArray.append(youtubeURL)
                 
                 }
             //✨このbreakはなぜ必要か❓
