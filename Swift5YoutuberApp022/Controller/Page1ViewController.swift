@@ -124,11 +124,9 @@ class Page1ViewController: UITableViewController,SegementSlideContentScrollViewD
                 let json:JSON = JSON(responce.data as Any)
                 let videoId = json["items"][i]["id"]["videoId"].string
                 
-                if videoId?.isEmpty ?? true{
+                if videoId == "" {
                     
-//                    videoId = json["7l4xJbSA5Jg"].string
-   
-                break
+                    return
                
                 }
                 

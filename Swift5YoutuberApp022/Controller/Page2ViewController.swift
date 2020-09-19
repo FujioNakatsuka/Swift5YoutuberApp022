@@ -103,10 +103,10 @@ class Page2ViewController: UITableViewController,SegementSlideContentScrollViewD
                 
                 let videoId = json["items"][i]["id"]["videoId"].string
                 
-                if videoId?.isEmpty ?? true{
+                if videoId == ""{
 
-//                    videoId = json["7l4xJbSA5Jg"].string
-                    break
+                    return
+                    
                 }
                 
                 let title = json["items"][i]["snippet"]["title"].string

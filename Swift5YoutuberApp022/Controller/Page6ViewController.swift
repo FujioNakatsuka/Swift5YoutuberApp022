@@ -107,10 +107,10 @@ class Page6ViewController: UITableViewController,SegementSlideContentScrollViewD
                 //videoIdに関連する行をコメントアウトするとクラッシュはしない。そこでif文にbreakを入れてみるとクラッシュはしなかったが、動画は出ない。。。
                 let videoId = json["items"][i]["id"]["videoId"].string
                 
-                if videoId?.isEmpty ?? true{
+                if videoId == ""{
+
+                    return
                     
-//                    videoId = json["7l4xJbSA5Jg"].string
-                    break
                 }
                 
                 let title = json["items"][i]["snippet"]["title"].string
