@@ -115,50 +115,67 @@ class Page1ViewController: UITableViewController,SegementSlideContentScrollViewD
             //20個の値が返るのでfor文で全て配列に入れる
               print(responce)
            
-            switch responce.result{
-                
-            case .success:
-                
+            
+             switch responce.result{
+                 
+             case .success:
+                 
             for i in 0...19{
- //✴️videoIdを収容する行をコメントアウトするとクラッシュはしない。そこでif文にbreakを入れてみるとクラッシュはしなかったが、動画は出ない。。。
-                let json:JSON = JSON(responce.data as Any)
-                let videoId = json["items"][i]["id"]["videoId"].string
-                
-                if videoId == "" {
-                    
-                    return
-               
-                }
-                
 
-                let title = json["items"][i]["snippet"]["title"].string
-                let imageURLString = json["items"][i]["snippet"]["thumbnails"]["default"]["url"].string
-                let youtubeURL = "https://www.youtube.com/watch?v=\(videoId!)"
-                let channelTitle = json["items"][i]["snippet"]["channelTitle"].string
+            let json:JSON = JSON(responce.data as Any)
+
+            var kind = json["items"][i]["id"]["kind"].string
                 
-                self.videoIdArray.append(videoId!)
-                self.titleArray.append(title!)
-                self.imageURLStringArray.append(imageURLString!)
-                self.channelTitleArray.append(channelTitle!)
-                self.youtubeURLArray.append(youtubeURL)
-                
-                }
-            //✨このbreakはなぜ必要か❓
-            break
-                
-            case .failure(let error):print(error)
-                
-            break
-                
-            }
-            
-            self.tableView.reloadData()
-            
-        }
-       
+            kind = String(kind!.dropFirst(8))
+
+            var videoId = String()
+
+            if kind == "video"{
+
+                          videoId = json["items"][i]["id"]["videoId"].string!
+
+                                 }else{   }
+
+                                 let title = json["items"][i]["snippet"]["title"].string
+
+                                 let imageURLString = json["items"][i]["snippet"]["thumbnails"]["default"]["url"].string
+
+                                 let youtubeURL = "https://www.youtube.com/watch?v=\(videoId)"
+
+                                 let channelTitle = json["items"][i]["snippet"]["channelTitle"].string
+
+                                 
+
+                                 self.videoIdArray.append(videoId)
+
+                                 self.titleArray.append(title!)
+
+                                 self.imageURLStringArray.append(imageURLString!)
+
+                                 self.channelTitleArray.append(channelTitle!)
+
+                                 self.youtubeURLArray.append(youtubeURL)
+
+                                 }
+
+                             //✨このbreakはなぜ必要か❓
+
+                             break
+
+                             case .failure(let error):print(error)
+
+                             break
+
+                             }
+
+             self.tableView.reloadData()
+
+         }
         
-    }
-    
+         
+     }
+     
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let indexNumber = indexPath.row

@@ -24,13 +24,20 @@ class Page4ViewController: UITableViewController,SegementSlideContentScrollViewD
     var imageURLStringArray = [String]()
     var youtubeURLArray = [String]()
     var channelTitleArray = [String]()
-    
-    
-    
+
+//    let refresh = UIRefreshControl()
+    @objc let refresh = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-  
+        
+        //✨引っ張って❓更新した時に呼ばれるメソッドとリフレッシュする動作,Page2以降では不要なのか？
+        tableView.refreshControl = refresh
+//        refresh.addTarget(self, action: #selector(update), for: .valueChanged)
+        refresh.addTarget(self, action: #selector(getter: refresh), for: .valueChanged)
+        getData()
+        tableView.reloadData()
+   
          }
    
                 
@@ -104,43 +111,59 @@ class Page4ViewController: UITableViewController,SegementSlideContentScrollViewD
             for i in 0...19{
                 
                 let json:JSON = JSON(responce.data as Any)
-                //videoIdに関連する行をコメントアウトするとクラッシュはしない。そこでif文にbreakを入れてみるとクラッシュはしなかったが、動画は出ない。。。
-                let videoId = json["items"][i]["id"]["videoId"].string
                 
-                if videoId == "" {
-                    
-                    return
+                var kind = json["items"][i]["id"]["kind"].string
 
-                }
+                kind = String(kind!.dropFirst(8))
 
-                let title = json["items"][i]["snippet"]["title"].string
-                let imageURLString = json["items"][i]["snippet"]["thumbnails"]["default"]["url"].string
-                let youtubeURL = "https://www.youtube.com/watch?v=\(videoId!)"
-                let channelTitle = json["items"][i]["snippet"]["channelTitle"].string
-                
-                self.videoIdArray.append(videoId!)
-                self.titleArray.append(title!)
-                self.imageURLStringArray.append(imageURLString!)
-                self.channelTitleArray.append(channelTitle!)
-                self.youtubeURLArray.append(youtubeURL)
-                
-                }
-            //✨このbreakはなぜ必要か❓
-            break
-                
-            case .failure(let error):print(error)
-                
-            break
-                
-            }
+                var videoId = String()
+
+                if kind == "video"{
+
+                              videoId = json["items"][i]["id"]["videoId"].string!
+
+                                     }else{   }
+
+                                     let title = json["items"][i]["snippet"]["title"].string
+
+                                     let imageURLString = json["items"][i]["snippet"]["thumbnails"]["default"]["url"].string
+
+                                     let youtubeURL = "https://www.youtube.com/watch?v=\(videoId)"
+
+                                     let channelTitle = json["items"][i]["snippet"]["channelTitle"].string
+
+                                     
+
+                                     self.videoIdArray.append(videoId)
+
+                                     self.titleArray.append(title!)
+
+                                     self.imageURLStringArray.append(imageURLString!)
+
+                                     self.channelTitleArray.append(channelTitle!)
+
+                                     self.youtubeURLArray.append(youtubeURL)
+
+                                     }
+
+                                 //✨このbreakはなぜ必要か❓
+
+                                 break
+
+                                 case .failure(let error):print(error)
+
+                                 break
+
+                                 }
+
+                 self.tableView.reloadData()
+
+             }
             
-            self.tableView.reloadData()
-            
-        }
-       
-        
-    }
-    
+             
+         }
+         
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let indexNumber = indexPath.row

@@ -15,6 +15,8 @@ import SDWebImage
 //✨TableViewControllerを使うのに、SubclassをUIViewControllerにした理由は何か❓
 class Page2ViewController: UITableViewController,SegementSlideContentScrollViewDelegate {
     
+    fileprivate let refreshCtl = UIRefreshControl()
+    
     //TableViewのdelegateMethod,YoutubeDataクラスを初期化する
     var youtubeData = YoutubeData()
     
@@ -24,11 +26,17 @@ class Page2ViewController: UITableViewController,SegementSlideContentScrollViewD
     var youtubeURLArray = [String]()
     var channelTitleArray = [String]()
     
-//    let refresh = UIRefreshControl()
+    @objc let refresh = UIRefreshControl()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //✨引っ張って❓更新した時に呼ばれるメソッドとリフレッシュする動作,Page2以降では不要なのか？
+        tableView.refreshControl = refresh
+        refresh.addTarget(self, action: #selector(getter: refresh), for: .valueChanged)
+        getData()
+        tableView.reloadData()
 
  }
     @objc var scrollView: UIScrollView{
@@ -79,17 +87,12 @@ class Page2ViewController: UITableViewController,SegementSlideContentScrollViewD
     func getData(){
         
         let text = "https://www.googleapis.com/youtube/v3/search?key=AIzaSyC7-ZBjqNeIsDGAtSCcT6Mjv978G5eD7Z4&q=障害者福祉&part=snippet&maxResults=19&order=date"
-
-//
 //        let text = "https://www.googleapis.com/youtube/v3/search?key=AIzaSyCRt90CS6GfUttMqx8FdqW6YAG1tH2BLIE&q=欅坂46&part=snippet&maxResults=19&order=date"
-//
         //Alamofireに検索ワードを入れる時に日本語を変換
         let url = text.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         //✨リクエストを送信,responseとresponceが並存なぜか❓
         AF.request( url, method:.get , parameters: nil, encoding: JSONEncoding.default).responseJSON{(responce)in
-            
-            //JSON解析
-            //20個の値が返るのでfor文で全て配列に入れる
+            //JSON解析,20個の値が返るのでfor文で全て配列に入れる
               print(responce)
            
             switch responce.result{
@@ -99,44 +102,40 @@ class Page2ViewController: UITableViewController,SegementSlideContentScrollViewD
             for i in 0...19{
                 
                 let json:JSON = JSON(responce.data as Any)
-                //videoIdに関連する行をコメントアウトするとクラッシュはしない。そこでif文にbreakを入れてみるとクラッシュはしなかったが、動画は出ない。。。
+                var kind = json["items"][i]["id"]["kind"].string
+                kind = String(kind!.dropFirst(8))
                 
-                let videoId = json["items"][i]["id"]["videoId"].string
-                
-                if videoId == ""{
+             var videoId = String()
 
-                    return
-                    
-                }
-                
-                let title = json["items"][i]["snippet"]["title"].string
-                let imageURLString = json["items"][i]["snippet"]["thumbnails"]["default"]["url"].string
-                let youtubeURL = "https://www.youtube.com/watch?v=\(videoId!)"
-                let channelTitle = json["items"][i]["snippet"]["channelTitle"].string
-                
-                self.videoIdArray.append(videoId!)
-                self.titleArray.append(title!)
-                self.imageURLStringArray.append(imageURLString!)
-                self.channelTitleArray.append(channelTitle!)
-                self.youtubeURLArray.append(youtubeURL)
-                
-                }
-            //✨このbreakはなぜ必要か❓
-            break
-                
-            case .failure(let error):print(error)
-                
-            break
-                
-            }
-            
-            self.tableView.reloadData()
-            
-        }
-       
-        
-    }
-    
+                if kind == "video"{
+
+                              videoId = json["items"][i]["id"]["videoId"].string!
+                                }else{   }
+
+                                     let title = json["items"][i]["snippet"]["title"].string
+                                     let imageURLString = json["items"][i]["snippet"]["thumbnails"]["default"]["url"].string
+                                     let youtubeURL = "https://www.youtube.com/watch?v=\(videoId)"
+                                     let channelTitle = json["items"][i]["snippet"]["channelTitle"].string
+
+                                     self.videoIdArray.append(videoId)
+                                     self.titleArray.append(title!)
+                                     self.imageURLStringArray.append(imageURLString!)
+                                     self.channelTitleArray.append(channelTitle!)
+                                     self.youtubeURLArray.append(youtubeURL)
+                                    }
+
+                                    break
+
+                                 case .failure(let error):print(error)
+                                 break
+
+                                 }
+                 self.tableView.reloadData()
+
+             }
+          }
+         
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let indexNumber = indexPath.row
