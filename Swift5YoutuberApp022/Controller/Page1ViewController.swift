@@ -103,71 +103,44 @@ class Page1ViewController: UITableViewController,SegementSlideContentScrollViewD
         let text = "https://www.googleapis.com/youtube/v3/search?key=AIzaSyC7-ZBjqNeIsDGAtSCcT6Mjv978G5eD7Z4&q=介護保険&part=snippet&maxResults=19&order=date"
 
 //        let text = "https://www.googleapis.com/youtube/v3/search?key=AIzaSyCRt90CS6GfUttMqx8FdqW6YAG1tH2BLIE&q=乃木坂46&part=snippet&maxResults=19&order=date"
-//
-//
-//
+
         //Alamofireに検索ワードを入れる時に日本語を変換
         let url = text.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-        //✨リクエストを送信,responseとresponceが並存なぜか❓
         AF.request( url, method:.get , parameters: nil, encoding: JSONEncoding.default).responseJSON{(responce)in
-            
             //JSON解析
             //20個の値が返るのでfor文で全て配列に入れる
               print(responce)
-           
-            
+  
+            //✨ここから
              switch responce.result{
-                 
              case .success:
-                 
-            for i in 0...19{
+             for i in 0...19{
+                let json:JSON = JSON(responce.data as Any)
+                var kind = json["items"][i]["id"]["kind"].string
+                kind = String(kind!.dropFirst(8))
+                var videoId = String()
 
-            let json:JSON = JSON(responce.data as Any)
-
-            var kind = json["items"][i]["id"]["kind"].string
-                
-            kind = String(kind!.dropFirst(8))
-
-            var videoId = String()
-
-            if kind == "video"{
-
-                          videoId = json["items"][i]["id"]["videoId"].string!
-
-                                 }else{   }
+                if kind == "video"{
+                     videoId = json["items"][i]["id"]["videoId"].string!
+                             }else{   }
 
                                  let title = json["items"][i]["snippet"]["title"].string
-
                                  let imageURLString = json["items"][i]["snippet"]["thumbnails"]["default"]["url"].string
-
                                  let youtubeURL = "https://www.youtube.com/watch?v=\(videoId)"
-
                                  let channelTitle = json["items"][i]["snippet"]["channelTitle"].string
 
-                                 
-
                                  self.videoIdArray.append(videoId)
-
                                  self.titleArray.append(title!)
-
                                  self.imageURLStringArray.append(imageURLString!)
-
                                  self.channelTitleArray.append(channelTitle!)
-
                                  self.youtubeURLArray.append(youtubeURL)
-
-                                 }
-
-                             //✨このbreakはなぜ必要か❓
-
-                             break
+                                }
 
                              case .failure(let error):print(error)
-
                              break
-
-                             }
-
+                           }
+            //✨ここまで
+            
              self.tableView.reloadData()
 
          }
